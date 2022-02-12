@@ -5,7 +5,7 @@ getFromServerJson();
 async function getFromServerJson() {
     let params = (new URL(document.location)).searchParams;
     let screen = params.get("screen");
-    const jsonPromise = await fetch("http://localhost:3000/messages/" +screen);
+    const jsonPromise = await fetch("http://localhost:3000/api/messages/" +screen);
     messagesFromServer = await jsonPromise.json();
     
     //Calc interval out of total messages time
